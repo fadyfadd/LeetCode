@@ -19,7 +19,7 @@ namespace LeetCode
 
     internal class MergeKSortedLists
     {
-        public static ListNode Execute(ListNode[] lists)
+        public static ListNode MergeKLists(ListNode[] lists)
         {
             // Base condition
             if (lists == null || lists.Length == 0)
@@ -83,7 +83,6 @@ namespace LeetCode
             }
             return head.next;
         }
-
 
     }
 }
