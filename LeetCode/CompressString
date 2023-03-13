@@ -1,0 +1,50 @@
+Int32 Compress(char[] chars)
+{
+    String output = "";
+    char lastChar = Char.MinValue;
+    output = "";
+    int i = 0;
+    int cnt = 1;
+
+    while (i <= chars.Length - 1)
+    {
+
+        if (chars[i] != lastChar)
+        {
+            if (lastChar != Char.MinValue)
+            {
+
+                if (cnt > 1)
+                    output = output + lastChar + cnt;
+                else
+                    output = output + lastChar;
+            }
+
+            lastChar = chars[i];
+            cnt = 1;
+        }
+        else
+        {
+            cnt++;
+        }
+
+        i++;
+    }
+
+
+    if (cnt > 1)
+        output = output + lastChar + cnt;
+    else
+        output = output + lastChar;
+
+    var l = output.ToCharArray();
+    //Array.Copy(l, chars , 0); 
+
+    for (int x = 0; x <= l.Length - 1; x++)
+    {
+        chars[x] = l[x];
+    }
+
+    return l.Length;
+
+}
